@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    color: white;
+}
+
+/* 🎥 BACKGROUND IMAGE */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url("bg.jpg.jpg") no-repeat center/cover;
+    position: relative;
+    animation: zoom 12s infinite alternate;
+}
+
+/* dark overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+/* content above overlay */
+.glass {
+    position: relative;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* button */
+.btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px white;
+}
+
+/* zoom animation */
+@keyframes zoom {
+    from {transform: scale(1);}
+    to {transform: scale(1.1);}
+}
+
+/* PRODUCTS */
+.products {
+    padding: 50px;
+    text-align: center;
+    background: #111;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* ABOUT */
+.about {
+    padding: 50px;
+    text-align: center;
+    background: #000;
+}
+
+/* SCROLL ANIMATION */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
